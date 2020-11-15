@@ -34,6 +34,7 @@ class DimmableBulbAdapter(Adapter):
                 'topic': device_data['friendly_name'] + '/set',
                 'payload': json.dumps({
                     "state": "ON",
-                    "brightness": int(level * 255 / 100)
+                    "brightness": int(level * 255 / 100),
+                    "transition": 0.3
                 })
             }

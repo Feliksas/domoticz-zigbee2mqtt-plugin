@@ -17,7 +17,8 @@ class CCTMixin():
                 'topic': topic,
                 'payload': json.dumps({
                     "state": "ON",
-                    "brightness": int(level * 255 / 100)
+                    "brightness": int(level * 255 / 100),
+                    "transition": 0.3
                 })
             }
 
@@ -30,6 +31,7 @@ class CCTMixin():
                 'payload': json.dumps({
                     "state": "ON",
                     "brightness": int(level * 255 / 100),
-                    "color_temp": int(color_temp * 500 / 255)
+                    "color_temp": int(color_temp * 500 / 255),
+                    "transition": 0.3
                 })
             }

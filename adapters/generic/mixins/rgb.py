@@ -17,7 +17,8 @@ class RGBMixin():
                 'topic': topic,
                 'payload': json.dumps({
                     "state": "ON",
-                    "brightness": int(level*255/100)
+                    "brightness": int(level*255/100),
+                    "transition": 0.3
                 })
             }
 
@@ -43,14 +44,16 @@ class RGBMixin():
                         "r": red,
                         "g": green,
                         "b": blue
-                    }
+                    },
+                    "transition": 0.3
                 })
             else:
                 payload = json.dumps({
                     "state": "ON",
                #     "transition" : ttime,
                     "color_temp": int((color_temp / 255 * 346) + 154),
-                    "brightness": int(level * 255 / 100)
+                    "brightness": int(level * 255 / 100),
+                    "transition": 0.3
                 })
 
             return {
